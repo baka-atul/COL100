@@ -1,157 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>COL100 Course Material</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Course materials and tutorials for MTL100.">
+        <meta name="description" content="Course materials and tutorials for COL100.">
         <meta name="author" content="Monil">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     
+        
         <style>
-            body {
-                background-image: url('https://imgs.search.brave.com/DNMkX_81iT_FJTouOcr6t-u83sXQ_-zgRFyAQLtcsao/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS8xNi84/OC9mdXlPVmEuanBn');
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-                margin: 0;
-                padding: 0;
-                font-family: 'Roboto', Arial, sans-serif;
-                color: white;
-            }
+        body {
+            background-image: url("https://imgs.search.brave.com/bv90bmNenzTPJoDGaHxdwNfhsAAGhl7yXyhYD-yhu-Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXZlLmNv/bS93cC96dWlIWDBL/LmpwZw");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: white;
+        }
     
-            h1 {
-                font-size: 3em;
-                color: #FFD700;
-                text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), 0 0 20px #FF4500;
-                animation: glow 1.5s infinite alternate;
-                background: linear-gradient(90deg, #FF6347, #FFD700, #32CD32);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
-                text-align: center;
-                margin: 20px 0;
-            }
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
     
-            .dropdown {
-                margin: 20px auto;
-                background-color: rgba(255, 255, 255, 0.9);
-                color: #333;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                overflow: hidden;
-                transition: margin-bottom 0.3s ease;
-                width: 80%;
-            }
+        h1 {
+            font-size: 3em;
+            color: #FFD700;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), 0 0 20px #FF4500;
+            animation: glow 1.5s infinite alternate;
+            background: linear-gradient(90deg, #FF6347, #FFD700, #32CD32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     
+        h2 {
+            font-size: 2em;
+        }
+    
+        .dropdown {
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: margin-bottom 0.3s ease;
+            width: 90%; /* Adjust width for smaller screens */
+            max-width: 800px; /* Limit the maximum width */
+        }
+    
+        .dropdown-header {
+            padding: 12px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #62a4e9;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+    
+        .dropdown-header:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+    
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            background-color: rgba(26, 86, 135, 0.8);
+            transition: max-height 0.5s ease;
+        }
+    
+        .dropdown-content.open {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+    
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            background-color: #0a5068;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    
+        .dropdown-content a:hover {
+            background-color: #0056b3;
+        }
+    
+        .dropdown-content::-webkit-scrollbar {
+            width: 6px;
+        }
+    
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background-color: #62a4e9;
+            border-radius: 10px;
+        }
+    
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
             .dropdown-header {
-                padding: 15px;
-                font-size: 1.2em;
-                font-weight: bold;
-                background-color: #62a4e9;
-                color: white;
-                cursor: pointer;
-                text-align: center;
-                transition: background-color 0.3s;
-            }
-    
-            .dropdown-header:hover {
-                background-color: #0056b3;
-            }
-    
-            .dropdown-content {
-                max-height: 0;
-                overflow-y: hidden;
-                background-color: rgba(93, 233, 83, 0.8);
-                transition: max-height 0.5s ease;
-            }
-    
-            .dropdown-content.open {
-                max-height: 500px;
-                overflow-y: auto;
+                font-size: 1em; /* Reduce font size for smaller screens */
             }
     
             .dropdown-content a {
-                display: block;
-                padding: 10px;
-                color: white;
-                text-decoration: none;
-                text-align: center;
-                background-color: #0a5068;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 0.9em; /* Reduce link size for smaller screens */
+                padding: 8px; /* Reduce padding for smaller screens */
             }
     
-            .dropdown-content a:hover {
-                background-color: #0056b3;
+            h1 {
+                font-size: 2em; /* Adjust heading size for smaller screens */
             }
     
-            .dropdown-content::-webkit-scrollbar {
-                width: 6px;
+            h2 {
+                font-size: 1.5em; /* Adjust subheading size for smaller screens */
             }
+        }
+    </style>
     
-            .dropdown-content::-webkit-scrollbar-thumb {
-                background-color: #62a4e9;
-                border-radius: 10px;
-            }
-    
-            .bottom-button {
-                position: fixed;
-                bottom: 20px;
-                left: 50%;
-                transform: translateX(-50%);
-                padding: 10px 20px;
-                font-size: 16px;
-                color: white;
-                background-color: #30c6f7;
-                border: none;
-                border-radius: 10px;
-                text-align: center;
-                text-decoration: none;
-                cursor: pointer;
-                transition: background-color 0.3s, transform 0.2s;
-                z-index: 1000;
-            }
-    
-            .bottom-button:hover {
-                background-color: #0056b3;
-                transform: scale(1.1);
-            }
-    
-            @keyframes glow {
-                from {
-                    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FF4500, 0 0 30px #FF4500;
-                }
-                to {
-                    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FF4500, 0 0 40px #FF4500;
-                }
-            }
-    
-            footer {
-                text-align: center;
-                margin-top: 20px;
-                font-size: 14px;
-            }
-    
-            footer a {
-                color: white;
-                text-decoration: none;
-            }
-        </style>
     
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const dropdowns = document.querySelectorAll('.dropdown');
+                const outerDropdowns = document.querySelectorAll('.dropdown.outer');
     
-                dropdowns.forEach(dropdown => {
-                    const header = dropdown.querySelector('.dropdown-header');
-                    const content = dropdown.querySelector('.dropdown-content');
+                outerDropdowns.forEach(outer => {
+                    const outerHeader = outer.querySelector('.dropdown-header');
+                    const outerContent = outer.querySelector('.dropdown-content');
     
-                    header.addEventListener('click', () => {
-                        const isOpen = content.classList.contains('open');
+                    outerHeader.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        const isOpen = outerContent.classList.contains('open');
                         closeAllDropdowns();
                         if (!isOpen) {
-                            content.classList.add('open');
+                            outerContent.classList.add('open');
                         }
+                    });
+    
+                    const innerDropdowns = outer.querySelectorAll('.dropdown.inner');
+                    innerDropdowns.forEach(inner => {
+                        const innerHeader = inner.querySelector('.dropdown-header');
+                        const innerContent = inner.querySelector('.dropdown-content');
+    
+                        innerHeader.addEventListener('click', (event) => {
+                            event.stopPropagation();
+                            const isOpen = innerContent.classList.contains('open');
+                            closeInnerDropdowns(outer);
+                            if (!isOpen) {
+                                innerContent.classList.add('open');
+                            }
+                        });
+    
+                        const innerMostDropdowns = inner.querySelectorAll('.dropdown.inner-most');
+                        innerMostDropdowns.forEach(innerMost => {
+                            const innerMostHeader = innerMost.querySelector('.dropdown-header');
+                            const innerMostContent = innerMost.querySelector('.dropdown-content');
+    
+                            innerMostHeader.addEventListener('click', (event) => {
+                                event.stopPropagation();
+                                const isOpen = innerMostContent.classList.contains('open');
+                                closeInnerMostDropdowns(inner);
+                                if (!isOpen) {
+                                    innerMostContent.classList.add('open');
+                                }
+                            });
+                        });
                     });
                 });
     
@@ -161,40 +187,144 @@
                     });
                 }
     
-                document.addEventListener('click', (event) => {
-                    if (!event.target.closest('.dropdown')) {
-                        closeAllDropdowns();
-                    }
+                function closeInnerDropdowns(outer) {
+                    outer.querySelectorAll('.dropdown.inner .dropdown-content').forEach(content => {
+                        content.classList.remove('open');
+                    });
+                }
+    
+                function closeInnerMostDropdowns(inner) {
+                    inner.querySelectorAll('.dropdown.inner-most .dropdown-content').forEach(content => {
+                        content.classList.remove('open');
+                    });
+                }
+    
+                document.addEventListener('click', () => {
+                    closeAllDropdowns();
                 });
             });
         </script>
     </head>
 <body>
-    <h1><a href="https://dalla111.github.io/homepage/" ><img src="https://jwalamukhi.iitd.ac.in/images/Jwala_logo_extra_small_2.png" alt="Logo" ></a>COL100 Course Material</h1>
+    <h1><a href="https://dalla111.github.io/homepage/" ><img src="https://jwalamukhi.iitd.ac.in/images/Jwala_logo_extra_small_2.png" alt="Logo" ></a>COL100 Course Material</h1>
 
-    <div class="dropdown">
-        <div class="dropdown-header">ASSIGNMENTS</div>
+    <div class="dropdown outer">
+        <div class="dropdown-header">SEM-1 | LECTURES</div>
         <div class="dropdown-content">
-            <a href="https://drive.google.com/drive/u/1/folders/17hxDHa0AKJREf_b-Hu-hup5hBlPqhaQ3" target="_blank" rel="noopener">ASSIGNMENTS</a>
-            </div>
-        
-        </div>
-    </div>
-    <div class="dropdown">
-        <div class="dropdown-header">BOOKS</div>
-        <div class="dropdown-content">
-            <a href="https://drive.google.com/drive/u/1/folders/1IDpLAGi0N5KHNFsszeOBoGaBtdHfrNjw" target="_blank" rel="noopener">THINK PYTHON 2</a>
-            </div>
-            </div>
-    </div>
+            <a href="https://drive.google.com/file/d/1k-oM-Q3NVRzjOI7GJWO-hatJxVP6S4Sl/view?usp=drive_link">Lecture 1</a>
+            <a href="https://drive.google.com/file/d/1sD1o1Bgh0GCmqv_J_yNBG0K6zRWWN30O/view?usp=drive_link">Lecture 2</a>
+            <a href="https://drive.google.com/file/d/1y_taj7cD48PaYrAdR5L6hM8dJ8J2Cc13/view?usp=drive_link">Lecture 3</a>
+            <a href="https://drive.google.com/file/d/1uqzl0G6pwPhbrkrw1Z0H01qSYI0DXwW6/view?usp=drive_link">Lecture 4</a>
+            <a href="https://drive.google.com/file/d/1SU46PBUgw0O2UqKwY2oIosOTBucG8zLT/view?usp=drive_link">Lecture 5</a>
+            <a href="https://drive.google.com/file/d/10f8Dm6tFoJ_2EpF4A6lRgYtzHd_5K-PN/view?usp=drive_link">Lecture 6</a>
+            <a href="https://drive.google.com/file/d/1NmI2RVr_FpYs7DaRqBcZwkOfrYp-h3M5/view?usp=drive_link">Lecture 7</a>
+            <a href="https://drive.google.com/file/d/1qMk4rsNJhLsTTBFF23e7hslT9DJBksqn/view?usp=drive_link">Lecture 8</a>
+            <a href="https://drive.google.com/file/d/1V0YOCh7GO4W3baH-_JE2p2OFyYU5JtKl/view?usp=drive_link">Lecture 9</a>
+            <a href="https://drive.google.com/file/d/1ZoTbzD_QlyS12OnpfffbHjz-Ah15Dkyr/view?usp=drive_link">Lecture 10</a>
+            <a href="https://drive.google.com/file/d/1y4y_b_-CC2_Ri5gXz5dSy-LUURbZ-v-E/view?usp=drive_link">Lecture 11</a>
+            <a href="https://drive.google.com/file/d/14Mv4JswL4r0xnTTmpMBf7zRxAZAqTy5H/view?usp=drive_link">Lecture 12</a>
+            <a href="https://drive.google.com/file/d/1OOhtxBJgX_5DOxmZuVyr748oMZ-DQWIx/view?usp=drive_link">Lecture 13</a>
+            <a href="https://drive.google.com/file/d/1_c2rB97bsLXZiab3Y5ig9hWGXCsPqW9a/view?usp=drive_link">Lecture 14</a>
+            <a href="https://drive.google.com/file/d/1fcvbDi-1KB_-LYQTCrKQvgbe39ZF9W-T/view?usp=drive_link">Lecture 15</a>
+            <a href="https://drive.google.com/file/d/1em3bOJfgJEBLrBFfWQFBhaAvg5MEM7V_/view?usp=drive_link">Lecture 16</a>
+            <a href="https://drive.google.com/file/d/1HI1r0muyElNYeEAVxPSA9_eKmHQMbVf9/view?usp=drive_link">Lecture 17</a>
+            <a href="https://drive.google.com/file/d/1vLBS-DcWy2CVFNvlUvEQdZah6TuWW7uE/view?usp=drive_link">Lecture 18</a>
+            <a href="https://drive.google.com/file/d/1wzODNFnlUqtjeT_MFfE47YPyfoCRUFMK/view?usp=drive_link">Lecture 19</a>
+            <a href="https://drive.google.com/file/d/1WiAB-Vv7Y-z-80ssShs6q2l_wMXoHFw8/view?usp=drive_link">Lecture 20</a>
+            <a href="https://drive.google.com/file/d/1asra46O07JdVJptZE3bvxOIbee39Nhh6/view?usp=drive_link">Lecture 21</a>
+            <a href="https://drive.google.com/file/d/17p-wa7-Gg4GoISJodO6Ik2uiYopviTOm/view?usp=drive_link">Lecture 22</a>
+            <a href="https://drive.google.com/file/d/1M06a4AxCqucPiRpoPwzRCRPPBAz8D9R3/view?usp=drive_link">Lecture 23</a>
+            <a href="https://drive.google.com/file/d/19viAcul4oTyMH2NMKR2-2TxlY6FDfj52/view?usp=drive_link">Lecture 24</a>
+            <a href="https://drive.google.com/file/d/1vVNLQN5gcJ6BPIzFcKnMmdPojlAgOxCD/view?usp=drive_link">Lecture 25</a>
+            <a href="https://drive.google.com/file/d/1dl_aDxEEZkqLg9LohzJbivJblxkv9dZA/view?usp=drive_link">Lecture 26</a>
+            <a href="https://drive.google.com/file/d/150UCm4JdANfBc7pz1_tRt7Q8VuHmDJqx/view?usp=drive_link">Lecture 27</a>
 
-    <div class="dropdown">
-        <div class="dropdown-header">EXAMS</div>
-        <div class="dropdown-content">
-            <a href="https://drive.google.com/drive/u/1/folders/166fDXpKwB6kGZjqsYptxbSwwLm94HSTM" target="_blank" rel="noopener">EXAMS</a>
+
+
             
         </div>
     </div>
+    <div class="dropdown">
+        <div class="dropdown-header">SEM-1 | TUTORIALS</div>
+        <div class="dropdown-content">
+            <a href="https://iitd.github.io/col100/labs/assignment1.html">Assignment 1</a>
+                <a href="https://iitd.github.io/col100/labs/assignment2.html">Assignment 2</a>
+                <a href="https://iitd.github.io/col100/labs/assignment3.html">Assignment 3</a>
+                <a href="https://iitd.github.io/col100/labs/assignment4.html">Assignment 4</a>
+                <a href="https://iitd.github.io/col100/labs/assignment5.html">Assignment 5</a>
+                <a href="https://iitd.github.io/col100/labs/assignment6.html">Assignment 6</a>
+                <a href="https://iitd.github.io/col100/labs/assignment7.html">Assignment 7</a>
+                <a href="https://iitd.github.io/col100/labs/assignment8.html">Assignment 8</a>
+
+            
+        </div>
+    </div>
+    <div class="dropdown outer">
+        <div class="dropdown-header">SEM-2 | LECTURES</div>
+        <div class="dropdown-content">
+            <a href="https://drive.google.com/file/d/1qMRXNM3nQPRAHGq3SNOKP-y8t7RToQw-/view?usp=drive_link">chapter 1</a>
+            <a href="https://drive.google.com/file/d/1oOo_eGGHfqthBC8irnCe3g5UG1jx0HDj/view?usp=drive_link">chapter 2</a>
+            <a href="https://drive.google.com/file/d/1KhqD-oHjhqgt9eEjYORNZTUOCW7AKx5w/view?usp=drive_link">chapter 3</a>
+            <a href="https://drive.google.com/file/d/1h_hNM5z2aF7WjtSiDhupjadVsQhIXJ1f/view?usp=drive_link">chapter 4</a>
+            <a href="https://drive.google.com/file/d/1SqP2QasCWZ33SjL436Fq1TvL-3KwQ_YU/view?usp=drive_link">chapter 5</a>
+           
+
+
+
+            
+        </div>
+    </div>
+    <div class="dropdown">
+        <div class="dropdown-header">SEM-2 | Assignment</div>
+        <div class="dropdown-content">
+            <a href="https://drive.google.com/file/d/11nFaTTcjlxX_exfao5eRjO-VnAUtTBNZ/view?usp=drive_link">Assignment 1</a>
+                <a href="https://drive.google.com/file/d/17cN2i9zXpgX-f9Frfyw5M4TyzOiYNfs2/view?usp=drive_link">Assignment 2</a>
+                
+
+            
+        </div>
+    </div>
+    <div class="dropdown">
+        <div class="dropdown-header">SEM-2 | LAB PROGRAMME</div>
+        <div class="dropdown-content">
+            <a href="https://drive.google.com/file/d/1fh8IeHHXDicMG2DFl-AGCxtsyv_MwMh6/view?usp=drive_link">LAB 1</a>
+            <a href="https://drive.google.com/file/d/1XE-4xy_rx76kor_6kK9F1_cYhjGXZkb2/view?usp=drive_link">LAB 2</a>
+            <a href="https://drive.google.com/file/d/1XE-4xy_rx76kor_6kK9F1_cYhjGXZkb2/view?usp=drive_link">LAB 3</a>
+            <a href="https://drive.google.com/file/d/1XE-4xy_rx76kor_6kK9F1_cYhjGXZkb2/view?usp=drive_link">LAB 4</a>                
+
+            
+        </div>
+    </div>
+    <div class="dropdown">
+        <div class="dropdown-header">2022 |LECTURE SLIDES</div>
+        <div class="dropdown-content">
+            <a href="https://drive.google.com/file/d/1d81OouUQYAXddDuRG8E35KHUlBgK93kK/view?usp=drive_link">1-intro.pdf</a>
+                <a href="https://drive.google.com/file/d/15fVStlJGOEWuuKwVPkc4IzGErQiydRY9/view?usp=drive_link">1. Introduction to C.pdf</a>
+                <a href="https://drive.google.com/file/d/1VGagvH3iNlK0QtEbMwDriRZZufZPqeGp/view?usp=drive_link">2-expressions.pdf</a>
+                <a href="https://drive.google.com/file/d/109yw-pn4OXCjDz_8fExod7oF6qPoJAYV/view?usp=drive_link">2. Expressions.pdf</a>
+                <a href="https://drive.google.com/file/d/1dQLgOzwK-tFnVFbYK7ThjusKdihy3mWC/view?usp=drive_link">3-conditionals.pdf</a>
+                <a href="https://drive.google.com/file/d/17Sts19bfuN1-mayZ0a-lrpfaGOfyFgiA/view?usp=drive_link">3. Conditional Statements.pdf</a>
+                <a href="https://drive.google.com/file/d/1sZv_OZotG6iUGKDvfG8UPrYfV4FPR2VY/view?usp=drive_link">4-loops.pdf</a>
+                <a href="https://drive.google.com/file/d/1rKnTRSmb8eKhtx1L7gt8_ho7WR8XfvM2/view?usp=drive_link">4. Looping.pdf</a>
+                <a href="https://drive.google.com/file/d/1uBIsEyyJuNAADpr5YFWYHi1jddOF5cMA/view?usp=drive_link">5-numbersystems.pdf</a>
+                <a href="https://drive.google.com/file/d/19UinXkP9vq4eYtDbPojbb6KlMwVZExnT/view?usp=drive_link">5. Number Representation.pdf</a>
+                <a href="https://drive.google.com/file/d/12DPqP1cIb5EsyXmbH5JgFZEnmzBeCLMd/view?usp=drive_link">6-arrays.pdf</a>
+                <a href="https://drive.google.com/file/d/1zaZCJNB8-BphLgOnr0zw51RlGgG-IUVP/view?usp=drive_link">6. Arrays.pdf</a>
+                <a href="https://drive.google.com/file/d/1IRrwr1-o3qRf4_Z9-sQI2kbigBSZRhXE/view?usp=drive_link">7-functions.pdf</a>
+                <a href="https://drive.google.com/file/d/1hQn7_fyBpMOCarGnQzKCsbCDhI28G5Oq/view?usp=drive_link">7. Functions.pdf</a>
+                <a href="https://drive.google.com/file/d/1bvAJ3y10qK30TgncAe7lF0lE1lM0ZnxD/view?usp=drive_link">8-recursion.pdf</a>
+                <a href="https://drive.google.com/file/d/1_nXmxLvxpv9m-ouWGB33HgQXxCLmTWnC/view?usp=drive_link">8. Recursion.pdf</a>
+                <a href="https://drive.google.com/file/d/1ThGFTDUrIRaBhFvVroj3hZKxm1gJGrrX/view?usp=drive_link">9-pointers.pdf</a>
+                <a href="https://drive.google.com/file/d/1_Cna29vIJI-2kDR9b5LkRslVnj96Tw-i/view?usp=drive_link">9. Pointers.pdf</a>
+                <a href="https://drive.google.com/file/d/1Guru0K51tx2zEOkaG3gRcu15clHVdpEQ/view?usp=drive_link">10-structures.pdf</a>
+                <a href="https://drive.google.com/file/d/1K-rQBBG4t96WrKH56Z7EbMOF-mwt1sGO/view?usp=drive_link">10. Structures.pdf</a>
+                <a href="https://drive.google.com/file/d/1bLYhBc9QeSliZgVbkNDuK4DitqHwnYlr/view?usp=drive_link">11-dynamicallocation.pdf</a>
+                <a href="https://drive.google.com/file/d/1bLYhBc9QeSliZgVbkNDuK4DitqHwnYlr/view?usp=drive_link">11. Dynamic Memory Allocation.pdf</a>
+
+            
+        </div>
+    </div>
+    
     <div class="dropdown">
         <div class="dropdown-header">LABTESTS</div>
         <div class="dropdown-content">
@@ -202,13 +332,7 @@
             
         </div>
     </div>
-    <div class="dropdown">
-        <div class="dropdown-header">LABS</div>
-        <div class="dropdown-content">
-            <a href="https://drive.google.com/drive/u/1/folders/1JOsdt3DC0EBzf_Mn_5gGmua7lk98ciCG" target="_blank" rel="noopener">LABS</a>
-            
-        </div>
-    </div>
+    
     <div class="dropdown">
         <div class="dropdown-header">LECTURE CODES</div>
         <div class="dropdown-content">
@@ -216,25 +340,21 @@
             
         </div>
     </div>
+   
+    
     <div class="dropdown">
-        <div class="dropdown-header">LECTURE SLIDES</div>
+        <div class="dropdown-header">LABS</div>
         <div class="dropdown-content">
-            <a href="https://drive.google.com/drive/u/1/folders/1kx_AhhyW0uqg-aANh-e-k3Hs07GjfUMK" target="_blank" rel="noopener">LECTURE SLIDES</a>
+            <a href="https://drive.google.com/drive/u/1/folders/1JOsdt3DC0EBzf_Mn_5gGmua7lk98ciCG" target="_blank" rel="noopener">LABS</a>
             
         </div>
     </div>
-    <div class="dropdown">
-        <div class="dropdown-header">PRACTICE PROBLEM</div>
-        <div class="dropdown-content">
-            <a href="https://drive.google.com/drive/u/1/folders/1aAyGPAb6HskqGEBPUeqANbte8H3DJJBa" target="_blank" rel="noopener">PRACTICE PROBLEM</a>
-            
-        </div>
-    </div>
+    
     <footer>
-        <h3>All rights are reserved </h3>
-        <p><a href="mailto:resourcesfresher@gmail.com">FOR ANY CHANGES CONTACT</a></p>
-        <p>&copy; 2025</p>
+        <p><a href="mailto:atulnigam087@gmail.com">FOR ANY CHANGES CONTACT</a></p>
+        <p>&copy; 2025 ALL RIGHTS RESERVED</p>
     </footer>
 </body>
 </html>
+
 
